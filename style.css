@@ -23,6 +23,7 @@ body{
     flex-direction: column;
     border-radius: 5px;
     background: #293447;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .game-details{
@@ -43,25 +44,74 @@ body{
 }
 
 .play-board .food{
-    background: #FF003D;
+    /* background: url('./images/png-transparent-bite-the-apple-eat-apples-sweet-crisp-water-droplets.png'); */
+    background: url('./images/png-clipart-apple-red-illustration-apple-hand-painted-watercolor-painting-food.png');
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
 }
 .play-board .head{
-    background: #60CBFF;
+    /* background: #60CBFF; */
+    /* border-radius: 4px;
+    background: #2e7d32; */
+    background-color: #2e7d32; /* base green */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(50,150,50,0.5) 15%, transparent 6%),
+        radial-gradient(circle at 50% 50%, rgba(60,170,60,0.5) 15%, transparent 6%),
+        radial-gradient(circle at 80% 70%, rgba(40,130,40,0.5) 15%, transparent 6%);
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    border-radius: 4px;
+
 }
 
 .controls{
+    /* display: none;
+    justify-content: space-between; */
     display: none;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 15px 0;
+    background: #1b2333;
+    width: 100wh;
+}
+
+.controls div{
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+    gap: 8px;
 }
 
 .controls i {
-    padding: 25px 0;
+    /* padding: 25px 0;
     color: #B8C6DC;
     text-align: center;
     cursor: pointer;
     font-size: 1.3rem;
     width: calc(100% / 4);
-    border-right: 1px solid #171b26;
+    border-right: 1px solid #171b26; */
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    background: #2f3b52;
+    color: #60CBFF;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.controls i:hover{
+    background: #60CBFF;
+    color: #1b2333;
+}
+
+.controls i:active {
+    transform: scale(0.9); /* gives tactile feedback */
 }
 
 @media screen and (max-width: 800px) {
@@ -75,6 +125,8 @@ body{
     }
     .controls {
         display: flex;
+        /* justify-content: space-between; */
+        /* align-items: end; */
     }
     .controls i {
         padding: 15px 0;
